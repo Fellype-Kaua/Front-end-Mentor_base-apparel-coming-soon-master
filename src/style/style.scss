@@ -1,41 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
 * {
     font-size: 62.5%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
-    header {
+    #header-mobile {
         padding: 2rem;
-        #logo {
+        .logo {
             width: 10rem;
         }
     }
+    #header-desktop{
+        display: none;
+        .logo {
+            width: 10rem;
+        }
+    }
+    
     main {
-        #img {
+        #img-mobile {
             width: 100%;
         }
+        #img-desktop{
+            display: none;
+        }
         .text-container {
-            padding: 3rem;
+            padding: 4rem;
             display: flex;
             flex-direction: column;
+            gap: 3vh;
+
+
             #title {
                 font-size: 5rem;
                 text-align: center;
                 display: flex;
                 flex-direction: column;
-                margin-bottom: 1rem;
+                font-size: 10rem;
                 span.weAre {
                     color: hsl(0, 36%, 70%);
+                    font-weight: 300;
                 }
                 span{
                     margin-bottom: -1rem;
+                    font-weight: 600;
                 }
             }
             #text {
                 font-size: 1.6rem;
                 color: hsl(0, 36%, 70%);
+                text-align: center;
             }
 
             .email-input-container {
@@ -46,7 +65,7 @@ body {
                 input[type="email"] {
                 font-size: 1.8rem;
                 border-radius: 10rem;
-                border: solid 1px hsl(0, 36%, 70%);
+                border: solid 1px rgba(206, 151, 151, 0.3);
                 color: hsl(0, 36%, 70%);
 
                 width: 100%;
@@ -54,7 +73,7 @@ body {
                 }
 
                 input[type="email"]::placeholder{
-                    color: hsl(0, 36%, 70%);
+                    color: rgba(206, 151, 151, 0.7);
                 }
 
                 #sendEmailButton {
@@ -65,8 +84,62 @@ body {
                 background-color: hsl(0, 93%, 68%);
                 position: absolute;
                 right: 0;
+                transition: background-color 0.3s ease;
+                cursor: pointer;
+                }
+                #sendEmailButton:hover {
+                background-color: hsl(0, 36%, 70%);
                 }
             }
         }
     }
+}
+
+
+@media screen and (min-width: 1024px) {
+    body{
+
+        #header-mobile{
+            display: none;
+        }
+
+        main{
+            display: flex;
+            height: 95dvh;
+            #img-mobile{
+                display: none;
+           }
+           #img-desktop{
+            width: 40%;
+            display: block;
+
+           }
+           .text-container{
+            background-image: url("../images/bg-pattern-desktop.svg");
+            background-position: top;
+
+            justify-content: center;
+            gap: 4rem;
+            padding: 8.5rem;
+
+
+            #header-desktop{
+                display: block;
+                padding: 1rem;
+                position: absolute;
+                top: 5rem;
+            }
+
+            #title{
+                text-align: left;
+                font-size: 12rem;
+                text-transform: uppercase;
+            }
+            #text{
+                text-align: left;
+            }
+           }
+        }
+    }
+    
 }

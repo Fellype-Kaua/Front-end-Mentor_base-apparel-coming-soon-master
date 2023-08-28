@@ -1,40 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
 * {
   font-size: 62.5%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-body header {
+body #header-mobile {
   padding: 2rem;
 }
-body header #logo {
+body #header-mobile .logo {
   width: 10rem;
 }
-body main #img {
+body #header-desktop {
+  display: none;
+}
+body #header-desktop .logo {
+  width: 10rem;
+}
+body main #img-mobile {
   width: 100%;
 }
+body main #img-desktop {
+  display: none;
+}
 body main .text-container {
-  padding: 3rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
+  gap: 3vh;
 }
 body main .text-container #title {
   font-size: 5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  font-size: 10rem;
 }
 body main .text-container #title span.weAre {
   color: hsl(0, 36%, 70%);
+  font-weight: 300;
 }
 body main .text-container #title span {
   margin-bottom: -1rem;
+  font-weight: 600;
 }
 body main .text-container #text {
   font-size: 1.6rem;
   color: hsl(0, 36%, 70%);
+  text-align: center;
 }
 body main .text-container .email-input-container {
   display: flex;
@@ -44,13 +59,13 @@ body main .text-container .email-input-container {
 body main .text-container .email-input-container input[type=email] {
   font-size: 1.8rem;
   border-radius: 10rem;
-  border: solid 1px hsl(0, 36%, 70%);
+  border: solid 1px rgba(206, 151, 151, 0.3);
   color: hsl(0, 36%, 70%);
   width: 100%;
   padding: 1rem;
 }
 body main .text-container .email-input-container input[type=email]::placeholder {
-  color: hsl(0, 36%, 70%);
+  color: rgba(206, 151, 151, 0.7);
 }
 body main .text-container .email-input-container #sendEmailButton {
   width: 20%;
@@ -60,4 +75,47 @@ body main .text-container .email-input-container #sendEmailButton {
   background-color: hsl(0, 93%, 68%);
   position: absolute;
   right: 0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+body main .text-container .email-input-container #sendEmailButton:hover {
+  background-color: hsl(0, 36%, 70%);
+}
+
+@media screen and (min-width: 1024px) {
+  body #header-mobile {
+    display: none;
+  }
+  body main {
+    display: flex;
+    height: 95dvh;
+  }
+  body main #img-mobile {
+    display: none;
+  }
+  body main #img-desktop {
+    width: 40%;
+    display: block;
+  }
+  body main .text-container {
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-position: top;
+    justify-content: center;
+    gap: 4rem;
+    padding: 8.5rem;
+  }
+  body main .text-container #header-desktop {
+    display: block;
+    padding: 1rem;
+    position: absolute;
+    top: 5rem;
+  }
+  body main .text-container #title {
+    text-align: left;
+    font-size: 12rem;
+    text-transform: uppercase;
+  }
+  body main .text-container #text {
+    text-align: left;
+  }
 }/*# sourceMappingURL=style.css.map */
