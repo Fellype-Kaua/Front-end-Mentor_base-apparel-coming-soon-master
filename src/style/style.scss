@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
 
 * {
     font-size: 62.5%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 body {
@@ -15,18 +15,18 @@ body {
             width: 10rem;
         }
     }
-    #header-desktop{
+    #header-desktop {
         display: none;
         .logo {
             width: 10rem;
         }
     }
-    
+
     main {
         #img-mobile {
             width: 100%;
         }
-        #img-desktop{
+        #img-desktop {
             display: none;
         }
         .text-container {
@@ -34,7 +34,6 @@ body {
             display: flex;
             flex-direction: column;
             gap: 3vh;
-
 
             #title {
                 font-size: 5rem;
@@ -46,7 +45,7 @@ body {
                     color: hsl(0, 36%, 70%);
                     font-weight: 300;
                 }
-                span{
+                span {
                     margin-bottom: -1rem;
                     font-weight: 600;
                 }
@@ -59,87 +58,155 @@ body {
 
             .email-input-container {
                 display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .inputs{
+                display: flex;
                 align-items: center;
                 position: relative;
-
+                flex-wrap: wrap;
                 input[type="email"] {
-                font-size: 1.8rem;
-                border-radius: 10rem;
-                border: solid 1px rgba(206, 151, 151, 0.3);
-                color: hsl(0, 36%, 70%);
+                    font-size: 1.8rem;
+                    border-radius: 10rem;
+                    border: solid 1px rgba(206, 151, 151, 0.3);
+                    color: hsl(0, 36%, 70%);
 
-                width: 100%;
-                padding: 1rem;
+                    width: 100%;
+                    padding: 1rem;
                 }
 
-                input[type="email"]::placeholder{
+                input[type="email"]::placeholder {
                     color: rgba(206, 151, 151, 0.7);
+
                 }
 
                 #sendEmailButton {
-                width: 20%;
-                height: 100%;
-                border-radius: 10rem;
-                border: none;
-                background-color: hsl(0, 93%, 68%);
-                position: absolute;
-                right: 0;
-                transition: background-color 0.3s ease;
-                cursor: pointer;
+                    width: 20%;
+                    height: 100%;
+                    border-radius: 10rem;
+                    border: none;
+                    background-color: hsl(0, 93%, 68%);
+                    position: absolute;
+                    right: 0;
+                    transition: background-color 0.3s ease;
+                    cursor: pointer;
                 }
                 #sendEmailButton:hover {
-                background-color: hsl(0, 36%, 70%);
+                    background-color: hsl(0, 36%, 70%);
                 }
+                }
+
+            }
+            #errorMessage {
+                font-size: 1.8rem;
+                color: red;
+                margin-left: 1rem;
+                display: none;
             }
         }
     }
 }
 
-
 @media screen and (min-width: 1024px) {
-    body{
-
-        #header-mobile{
+    body {
+        #header-mobile {
             display: none;
         }
 
-        main{
+        main {
             display: flex;
             height: 95dvh;
-            #img-mobile{
+            #img-mobile {
                 display: none;
-           }
-           #img-desktop{
-            width: 40%;
-            display: block;
-
-           }
-           .text-container{
-            background-image: url("../images/bg-pattern-desktop.svg");
-            background-position: top;
-
-            justify-content: center;
-            gap: 4rem;
-            padding: 8.5rem;
-
-
-            #header-desktop{
+            }
+            #img-desktop {
+                width: 40%;
                 display: block;
-                padding: 1rem;
-                position: absolute;
-                top: 5rem;
             }
+            .text-container {
+                background-image: url("../images/bg-pattern-desktop.svg");
+                background-position: top;
 
-            #title{
-                text-align: left;
-                font-size: 12rem;
-                text-transform: uppercase;
+                justify-content: center;
+                gap: 4rem;
+                padding: 8.5rem;
+
+                #header-desktop {
+                    display: block;
+                    padding: 1rem;
+                    position: absolute;
+                    top: 5rem;
+                }
+
+                #title {
+                    text-align: left;
+                    font-size: 12rem;
+                    text-transform: uppercase;
+                }
+                #text {
+                    text-align: left;
+                }
             }
-            #text{
-                text-align: left;
-            }
-           }
         }
     }
-    
 }
+@media screen and (min-width: 1440px) {
+    body {
+
+        main {
+            height: 95dvh;
+
+            #img-desktop {
+                max-height: 95dvh;
+            }
+            .text-container {
+                gap: 6rem;
+                padding: 30rem;
+                background-repeat: no-repeat;
+                background-size: cover;
+                #header-desktop {
+                    .logo{
+                        width: 15rem;
+                    }
+                }
+
+                #title {
+                    font-size: 16rem;
+                }
+                #text {
+                    font-size: 2.8rem;
+                }
+                .email-input-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    position: relative;
+                    .inputs{
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    flex-wrap: wrap;
+                    input[type="email"] {
+                        font-size: 2rem;
+                        width: 100%;
+                        height: 6rem;
+                    }
+
+                    #sendEmailButton {
+                        width: 10%;
+                        height: 100%;
+                    }
+                    }
+    
+                }
+                #errorMessage {
+                    font-size: 2rem;
+                    position: absolute;
+                    bottom: -3rem;
+                }
+            }
+        }
+    }
+}
+
